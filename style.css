@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
-    color: #333;
+    color: #335462;
 }
 .container {
     max-width: 1200px;
@@ -14,16 +14,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #004080;
-    padding: 20px;
-    color: white;
+    padding: 10px;
 }
 .header img {
-    height: 50px;
+    height: 100px;
+    padding-left: 10px;
 }
 .login-button {
-    background-color: #ffcc00;
-    color: #004080;
+    background-color: rgb(255, 220, 0);
+    color: #335462;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -34,18 +33,18 @@ body {
 .navigation {
     display: flex;
     justify-content: space-around;
-    margin: 20px 0;
+    margin: 10px;
 }
 .navigation div {
     position: relative;
     cursor: pointer;
     padding: 15px 30px;
-    background-color: #e6e6e6;
+    background-color: #f9f9f9;
     transition: background-color 0.3s;
     text-align: center;
 }
 .navigation div:hover {
-    background-color: #ffffff;
+    background-color: #ebebeb;
 }
 .navigation div::before {
     content: '';
@@ -65,7 +64,6 @@ body {
     display: none;
     padding: 20px;
     background-color: white;
-    
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .content.active {
