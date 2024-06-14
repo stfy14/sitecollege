@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}Сайт{% endblock %}
+
+{% block logo %}<img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" onclick="showContent('content0')">{% endblock %}
+
+{% block navigation %}
+    <div onclick="showContent('content1')" id="nav1">Новости</div>
+    <div onclick="showContent('content2')" id="nav2">Образование</div>
+    <div onclick="showContent('content3')" id="nav3">Студентам</div>
+    <div onclick="showContent('content4')" id="nav4">Абитуриентам</div>
+{% endblock %}
+
+{% block header %}
+    <form action="/login">
+        <button class="login-button">Профиль</button>
+    </form>         
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="navigation-wrapper">
+            <div class="static-bar"></div>
+        </div>
+        <div id="content0" class="content">
+            <h2>test</h2>
+        </div>
+        <div class="content-bg">
+            <div id="content1" class="content">
+                <h2>1</h2>
+            </div>
+        </div>
+        <div class="content-bg">
+            <div id="content2" class="content">
+                <h2>2</h2>
+            </div>
+        </div>
+        <div class="content-bg">
+            <div id="content3" class="content">
+                <h2>3</h2>
+            </div>
+        </div>
+        <div class="content-bg">
+            <div id="content4" class="content">
+                <h2>Логоблоки</h2>
+                <ul>
+                    <li>Знак/логотип/дескриптор/кириллица</li>
+                    <li>Знак/логотип/дескриптор/латиница</li>
+                    <li>Стилизованные версии логотипа</li>
+                    <li>Логотип Музея архитектуры и дизайна</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+        <div class="footer">
+            Для корректного использования шаблонов установите шрифты из архива по ссылке
+        </div>
+    <script>
+        function showContent(id) {
+            var contents = document.querySelectorAll('.content');
+            var navs = document.querySelectorAll('.navigation div');
+            contents.forEach(function(content) {
+                content.classList.remove('active');
+            });
+            navs.forEach(function(nav) {
+                nav.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+            document.getElementById('nav' + id.charAt(id.length - 1)).classList.add('active');
+        }
+    </script>
+{% endblock %}

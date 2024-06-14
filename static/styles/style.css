@@ -1,0 +1,157 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+    color: #335462;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.header img {
+    height: 100px;
+    padding-left: 10px;
+}
+.login-button {
+    background-color: #4da6ff;
+    color: #335462;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+.navigation {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 60px;
+}
+.navigation div {
+    position: relative;
+    cursor: pointer;
+    padding: 15px 30px;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+    text-align: center;
+    border-radius: 6px;
+}
+.navigation div:hover {
+    background-color: #f7f7f7;
+    border-radius: 6px;
+}
+.navigation div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 5px;
+    background-color: #2f6dac;
+    transition: width 0.3s;
+    border-radius: 10px;
+}
+.navigation div.active::before {
+    width: 100%;
+
+}
+.content {
+    display: none;
+    padding: 20px;
+}
+.content.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #555;
+}
+/* .logo {
+    transition: transform 0.20s ease-in-out;
+} */
+  
+/* .logo:hover {
+    transform: scale(1.05);
+} */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.content-bg {
+    background-color: white;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* input_login */
+.mb-3 {
+    position: relative;
+    margin-top: 32px;
+} 
+
+input {
+    font-size: 24px;
+    width: 2px;
+    height: 50px;
+    background-color: #00000000;
+    color: #333; 
+    width: 100%; 
+    box-sizing: border-box; 
+    letter-spacing: 1px;
+    border-radius: 5px;
+}
+
+effect-17 ~ 
+.focus-border {
+    position: absolute; 
+    bottom: 0; 
+    left: 50%; 
+    width: 0; 
+    height: 2px; 
+    background-color: #4caf50; 
+    transition: 0.4s;
+}
+.effect-17:focus ~ .focus-border, .has-content.effect-17 ~ .focus-border {
+    width: 100%; 
+    transition: 0.4s; 
+    left: 0;
+}
+.effect-17 ~ label {
+    position: absolute; 
+    font-size: 24px;
+    left: 8px; 
+    width: 100%; 
+    top: 12px; color: #aaa; 
+    transition: 0.3s; 
+    z-index: -1; 
+    letter-spacing: 0.5px;
+}
+.effect-17:focus ~ label, .has-content.effect-17 ~ label {
+    top: -24px; 
+    font-size: 18px; 
+    color: #4caf50; 
+    transition: 0.3s;
+}
+/* input_login */
