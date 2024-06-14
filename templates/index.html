@@ -2,8 +2,6 @@
 
 {% block title %}Сайт{% endblock %}
 
-{% block logo %}<img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" onclick="showContent('content0')">{% endblock %}
-
 {% block navigation %}
     <div onclick="showContent('content1')" id="nav1">Новости</div>
     <div onclick="showContent('content2')" id="nav2">Образование</div>

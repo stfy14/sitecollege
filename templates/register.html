@@ -2,42 +2,41 @@
 
 {% block content %}
 <div class="card">
-    <div class="card-header">
-        <h1 class="text-center">Регистрация</h1>
-    </div>
-    <div class="card-body">
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <div class="alert alert-danger">
-            <ul>
-                {% for message in messages %}
-                <li>{{ message }}</li>
-                {% endfor %}
-            </ul>
+    <div class="card-bg-register">
+        <div class="card-header">
+            <h1 class="text-center">Регистрация</h1>
         </div>
-        {% endif %}
-        {% endwith %}
-        <form method="post">
-            <div class="mb-3 input-effect">
-                <input type="text" class="effect-17" placeholder="" id="username" name="username" required>
-                <label>Логин</label>
-                <span class="focus-border"></span>
-            </div>
-            <div class="mb-3 input-effect">
-                <input type="password" class="effect-17" placeholder="" id="password" name="password" required>
-                <label>Пароль</label>
-                <span class="focus-border"></span>
-            </div>
-            <div class="mb-3 input-effect">
-                <input type="email" class="effect-17" placeholder="" id="email" name="email" required>
-                <label>Почта</label>
-                <span class="focus-border"></span>
-            </div>
-            <div class="text-center">
-                <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
-            </div>
-            <input(type="text", placeholder="What's your name?")>
-        </form>
+        <div class="card-body">
+            <form method="post">
+                <div class="mb-3 input-effect">
+                    <input type="text" class="effect-17" placeholder="" id="username" name="username" required>
+                    <label>Логин</label>
+                    <span class="focus-border"></span>
+                </div>
+                <div class="mb-3 input-effect">
+                    <input type="password" class="effect-17" placeholder="" id="password" name="password" required>
+                    <label>Пароль</label>
+                    <span class="focus-border"></span>
+                </div>
+                <div class="mb-3 input-effect">
+                    <input type="email" class="effect-17" placeholder="" id="email" name="email" required>
+                    <label>Почта</label>
+                    <span class="focus-border"></span>
+                </div>
+                <div class="btn-auth">
+                    <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+                </div>
+                {% with messages = get_flashed_messages() %}
+                <div class="alert alert-danger">
+                    <ul>
+                        {% for message in messages %}
+                        <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endwith %}
+            </form>
+        </div>
     </div>
 </div>
 {% endblock %}

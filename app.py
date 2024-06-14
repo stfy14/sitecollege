@@ -31,7 +31,7 @@ def login():
             login_user(user)
             return redirect(url_for('profile'))
         else:
-            flash('Invalid username or password')
+            flash('Неверный логин или пароль!')
     return render_template('login.html')
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -44,13 +44,13 @@ def register():
         email = request.form['email']
         user = User.query.filter_by(username=username).first()
         if user:
-            flash('Username already taken')
+            flash('Такой логин уже существует!')
         else:
             hashed_password = generate_password_hash(password)
             new_user = User(username=username, password=hashed_password, email=email)
             db.session.add(new_user)
             db.session.commit()
-            flash('Account created successfully')
+            flash('Аккаунт успешно создан!')
             return redirect(url_for('login'))
     return render_template('register.html')
 
