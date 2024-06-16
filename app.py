@@ -43,8 +43,13 @@ def register():
         password = request.form['password']
         email = request.form['email']
         user = User.query.filter_by(username=username).first()
-        if user:
+        email_check = User.query.filter_by(email=email).first()
+        if email_check and user:
+            flash('Такой пользователь уже существует')
+        elif user:
             flash('Такой логин уже существует!')
+        elif email_check:
+            flash('Эта почта уже существует!')
         else:
             hashed_password = generate_password_hash(password)
             new_user = User(username=username, password=hashed_password, email=email)
