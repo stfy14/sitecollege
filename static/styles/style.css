@@ -156,6 +156,9 @@ input {
     border-bottom-left-radius: 0px;
     transition: border-bottom-right-radius 0.6s; 
 }
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #00000007 inset !important;
+}
 input:focus {
     border-bottom-right-radius: 0px;
 }
@@ -230,4 +233,24 @@ a {
     padding-inline-start: 0px;
     list-style-type: none;
     color: #770000;
+}
+.container-contacts {
+    background-color: #eeeeee;
+    border-radius: 10px;
+    border: 2px solid #eeeeee;
+    margin: 0 auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 2px solid #eeeeee;
+    padding: 8px;
+}
+th {
+    background-color: #fafafa;
+}
+td {
+    background-color: #ffffff;
 }

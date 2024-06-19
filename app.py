@@ -1,10 +1,15 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_login import LoginManager, login_user, current_user, logout_user
 from werkzeug.security import check_password_hash, generate_password_hash
-from models import User, db
+from models import User, Contacts, db
+from get_contacts import import_data_from_url
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
+app.config['SQLALCHEMY_BINDS'] = {
+    'contacts': 'sqlite:///contacts.db'
+}
 app.config['SECRET_KEY'] = '0602'
 db.init_app(app)
 login_manager = LoginManager()
@@ -70,6 +75,12 @@ def profile():
 def logout():
     logout_user()
     return redirect(url_for('index'))
+
+@app.route('/contacts', methods=['GET'])
+def contacts():
+    import_data_from_url(url='https://odatauser:odatapass@it.usaaa.ru/dev-5/odata/standard.odata/Catalog_ФизическиеЛица?$format=json')
+    contacts = Contacts.query.all()
+    return render_template('contacts.html', contacts=contacts)
 
 if __name__ == '__main__':
     with app.app_context():

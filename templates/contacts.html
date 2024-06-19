@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Контактные данные{% endblock %}
+
+{% block header %}
+    <form action="/login">
+        <button class="login-button">Профиль</button>
+    </form>         
+{% endblock %}
+
+{% block content %}
+    <div class="container-contacts">
+        <h1 align="center">Контактные данные сотрудников</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ФИО</th>
+                    <th>Пол</th>
+                    <th>Номер телефона</th>
+                    <th>Дата рождения</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contact in contacts %}
+                <tr>
+                    <td>{{ contact.Description }}</td>
+                    <td>{{ contact.Sex }}</td>
+                    <td>{{ contact.NumberPhone }}</td>
+                    <td>{{ contact.DateLife }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

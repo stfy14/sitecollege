@@ -2,24 +2,22 @@
 
 {% block title %}Сайт{% endblock %}
 
-{% block navigation %}
-    <div onclick="showContent('content1')" id="nav1">Новости</div>
-    <div onclick="showContent('content2')" id="nav2">Образование</div>
-    <div onclick="showContent('content3')" id="nav3">Студентам</div>
-    <div onclick="showContent('content4')" id="nav4">Абитуриентам</div>
-{% endblock %}
-
 {% block header %}
     <form action="/login">
         <button class="login-button">Профиль</button>
     </form>         
 {% endblock %}
 
+{% block navigation %}
+    <div onclick="showContent('content1')" id="nav1">Новости</div>
+    <div onclick="showContent('content2')" id="nav2">Образование</div>
+    <div onclick="showContent('content3')" id="nav3">Студентам</div>
+    <div onclick="showContent('content4')" id="nav4">Абитуриентам</div>
+    <a href="/contacts"><div>Контакты</div></a>
+{% endblock %}
+
 {% block content %}
     <div class="container">
-        <div class="navigation-wrapper">
-            <div class="static-bar"></div>
-        </div>
         <div id="content0" class="content">
             <h2>test</h2>
         </div>
@@ -51,7 +49,7 @@
         </div>
     </div>
         <div class="footer">
-            Для корректного использования шаблонов установите шрифты из архива по ссылке
+            Привет, это 'footer'!
         </div>
     <script>
         function showContent(id) {
