@@ -89,6 +89,7 @@ def contacts():
 def get_contacts():
     import_data_from_url(url='https://odatauser:odatapass@it.usaaa.ru/dev-5/odata/standard.odata/Catalog_ФизическиеЛица?$format=json')
     return make_response(jsonify({'status': 'done'}), 200)
+    return make_response(jsonify({'status': 'error'}), 404)
 
 if __name__ == '__main__':
     with app.app_context():

@@ -8,48 +8,183 @@
     </form>         
 {% endblock %}
 
+{% block logo %}
+    <a onclick="showContent('content0')"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo"></a>
+{% endblock %}
+
 {% block navigation %}
-    <div onclick="showContent('content1')" id="nav1">Новости</div>
-    <div onclick="showContent('content2')" id="nav2">Образование</div>
-    <div onclick="showContent('content3')" id="nav3">Студентам</div>
-    <div onclick="showContent('content4')" id="nav4">Абитуриентам</div>
-    <a href="/contacts"><div>Контакты</div></a>
+    <div onclick="showContent('content1')" id="nav1">Образование</div>
+    <div onclick="showContent('content3')" id="nav3">Абитуриентам</div>
+    <div onclick="showContent('content2')" id="nav2">Студентам</div>
 {% endblock %}
 
 {% block content %}
     <div class="container">
         <div id="content0" class="content">
-            <h2>test</h2>
-        </div>
-        <div class="content-bg">
-            <div id="content1" class="content">
-                <h2>1</h2>
+            <div class="content-card">
+                <img src="{{ url_for('static', filename='img/1.jpg') }}">
+                <span>
+                    <div class="text-bg"><h2 align="center">Уральский государственный колледж архитекрутно-художественный университет</h2></div>
+                        <h3 align="center">Является одним из ведущих вузов страны, готовящих всококвалифицированные
+                            кадры в областях градостроительства, архитектуры, дизайна, изобразительного
+                            искусства.</h3>
+                        <h3 align="center">В университете применяются современные образовательные технологии: дистанционное обучение, 
+                            интерактивные методы, интернет-тестирование и др.</h3>
+                </span>
+            </div>
+            <div class="content-card-about">
+                <h4 align="center">Хотите узнать больше?</h4>
+                <button class="about-btn" onclick="showContent('content1')">Узнать больше</button>
             </div>
         </div>
-        <div class="content-bg">
-            <div id="content2" class="content">
-                <h2>2</h2>
+        <div id="content1" class="content"">
+            <div class="content-bg">
+                <div class="text-bg"><h2 align="center">Наши специальности</h2></div>
+                    <div class="text-bg text-ul">
+                    <h2>БАКАЛАВРИАТ</h2>
+                    <ul>
+                        <li style="color: green">07.03.01 Архитектура</li>
+                        <li style="color: green">07.03.04 Градостроительство</li>
+                        <li style="color: red">54.03.01 Дизайн
+                            <ul style="color: red">
+                                <li>Промышленный дизайн</li>
+                                <li>Дизайн костюма</li>
+                                <li>Дизайн среды</li>
+                                <li>Графический дизайн</li>
+                                <li>Дизайн мультимедиа</li>
+                                <li>Дизайн интерфейсов</li>
+                            </ul>
+                        </li>
+                        <li style="color: blue">54.03.02 Декоративно-прикладное искусство и народные промыслы (ДПИ и НП)</li>
+                        <li style="color: blue">54.03.03 Искусство костюма и текстиля</li>
+                        <li style="color: blue">54.05.02 Живопись (специальность)</li>
+                        <li style="color: blue">54.05.03 Графика (специальность)</li>
+                        <li style="color: blue">54.05.01 Монументально-декоративное искусство (МДИ) (специальность)</li>
+                    </ul>
+                
+                    <h2>МАГИСТРАТУРА</h2>
+                    <ul>
+                        <li style="color: green">07.04.01 Архитектура</li>
+                        <li style="color: red">54.04.01 Дизайн
+                            <ul style="color: red">
+                                <li>Промышленный дизайн
+                                    <ul>
+                                        <li>Студия дизайна товаров</li>
+                                        <li>Студия специальных транспортных систем</li>
+                                        <li>Студия дизайна для экстремальной среды</li>
+                                    </ul>
+                                </li>
+                                <li>Дизайн костюма</li>
+                                <li>Дизайн среды</li>
+                                <li>Графический дизайн</li>
+                            </ul>
+                        </li>
+                        <li style="color: blue">54.04.02 Декоративно-прикладное искусство и народные промыслы (ДПИ и НП)</li>
+                    </ul>
+                
+                    <h2>АСПИРАНТУРА</h2>
+                    <ul>
+                        <li>07.06.01 Архитектура</li>
+                        <li>50.06.01 Искусствоведение</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-card-about">
+                <h4 align="center">Как с вами связаться?</h4>
+                <button class="about-btn" onclick="showContent('content3')">Контакты</button>
             </div>
         </div>
-        <div class="content-bg">
-            <div id="content3" class="content">
-                <h2>3</h2>
+        <div id="content2" class="content">
+            <div class="content-bg">
+                <div class="text-bg">
+                    <h2 align="center">Расписание</h2>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Учебные занятия</th>
+                            <th>Начало</th>
+                            <th>Окончание</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2">1 пара</td>
+                            <td>9:00 - 9:50</td>
+                            <td>9:45 - 10:35</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Перерыв 10 минут</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">2 пара</td>
+                            <td>10:45 - 11:35</td>
+                            <td>11:30 - 12:20</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Перерыв 60 минут</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">3 пара</td>
+                            <td>13:20 - 14:10</td>
+                            <td>14:05 - 14:55</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Перерыв 10 минут</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">4 пара</td>
+                            <td>15:05 - 15:55</td>
+                            <td>15:50 - 16:40</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Перерыв 10 минут</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">5 пара</td>
+                            <td>16:50 - 17:40</td>
+                            <td>17:35 - 18:25</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Перерыв 10 минут</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">6 пара</td>
+                            <td>18:35 - 19:25</td>
+                            <td>19:20 - 20:10</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-        <div class="content-bg">
-            <div id="content4" class="content">
-                <h2>Логоблоки</h2>
-                <ul>
-                    <li>Знак/логотип/дескриптор/кириллица</li>
-                    <li>Знак/логотип/дескриптор/латиница</li>
-                    <li>Стилизованные версии логотипа</li>
-                    <li>Логотип Музея архитектуры и дизайна</li>
-                </ul>
+        <div id="content3" class="content">
+            <div class="content-bg">
+                <div class="text-bg">
+                    <h2 align="center">Дата приема</h2>
+                </div>
+                <div style="padding-left: 30px; padding-top: 10px;">
+                    <h2>ПРИЕМ 2024</h2>
+                    <p><strong>Ответственный секретарь:</strong> ЗАГРЕБИНА Наталья Михайловна</p>
+                    <p><strong>Зам. ответственного секретаря:</strong> СКВОРЦОВА Лариса Борисовна</p>
+                    <p><strong>Телефон:</strong> +7 (343) 371-00-14, +7 (343) 221-28-63</p>
+
+                    <h3>ЧАСЫ РАБОТЫ ПРИЕМНОЙ КОМИССИИ</h3>
+                    <p>с 20 июня по 07 июля</p>
+                    <p>понедельник – пятница: с 09-00 до 17-00</p>
+
+                    <p>с 08 июля по 16 августа</p>
+                    <p>понедельник – пятница: с 09-00 до 17-00</p>
+                    <p>суббота: с 10-00 до 14-00</p>
+
+                    <p>28 июля (воскресенье)</p>
+                    <p>с 10-00 до 14-00 – работа по приему оригиналов документов об образовании</p>
+                </div>
             </div>
         </div>
     </div>
         <div class="footer">
-            Привет, это 'footer'!
+            Уральский Государственный Архитектурно-художественный Университет имени Н.С.Альфедова
+            'УРГАхУ'
         </div>
     <script>
         function showContent(id) {

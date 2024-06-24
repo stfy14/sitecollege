@@ -3,7 +3,16 @@
 {% block title %}Профиль{% endblock %}
 
 {% block content %}
-    <div>
-        <a href="/logout">Выйти из профиля</a>
+    <div class="container">
+        <div class="content-profile">
+            <div class="cirlce-container">
+                <div class="circle"><img src="{{url_for('static', filename='img/profile.png')}}"></div>
+            </div>
+            <h3>Привет, {{current_user.username}}!</h3>
+            <div class="navigation_profile">
+                <a class="profile-nav-btn" href="/logout">Выйти из профиля</a>
+                <a class="profile-nav-btn" href="/contacts"><div>Контакты сотрудников</div></a>
+            </div>
+        </div>
     </div>
 {% endblock %}
