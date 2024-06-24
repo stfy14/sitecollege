@@ -2,4 +2,3 @@ flask
 flask_login
 sqlalchemy
 requests 
-odata
